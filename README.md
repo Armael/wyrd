@@ -47,5 +47,7 @@ Forked from https://github.com/haguenau/wyrd
 
 Original Bazaar repository: https://bazaar.launchpad.net/~pelzlpj/wyrd/wyrd-dev/files
 
+AUR repository: https://aur.archlinux.org/packages/wyrd-git/
+
 Author: Paul Pelzl
 
