@@ -1081,7 +1081,7 @@ let handle_view_keybindings (iface : interface_state_t) reminders =
          end
    in
    Hashtbl.iter find_binding Rcfile.table_commandstr_command;
-   let sorted_list = List.fast_sort Pervasives.compare !bindings in
+   let sorted_list = List.fast_sort Stdlib.compare !bindings in
    def_prog_mode ();
    endwin ();
    let out_channel = Unix.open_process_out "less" in
@@ -1929,7 +1929,7 @@ let handle_keypress key (iface : interface_state_t) reminders =
                      |ExtendedGoto   -> "logical error in generating extended entry string"
                   in
                   failwith err_msg
-            with Failure _ | Invalid_argument "char_of_int" ->
+            with Failure _ | Invalid_argument _ (* char_of_int *) ->
                let _ = beep () in
                (iface, reminders)
             end

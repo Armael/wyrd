@@ -31,7 +31,7 @@ open Utility
 
 (* sort timed lineinfo entries by starting timestamp *)
 let sort_lineinfo line1 line2 =
-   ~- (Pervasives.compare line1.tl_start line2.tl_start)
+   ~- (Stdlib.compare line1.tl_start line2.tl_start)
 
 
 (* Word-wrap a string--split the string at whitespace boundaries

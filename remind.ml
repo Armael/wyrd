@@ -31,7 +31,7 @@ open Utility
 module IntPair =
    struct
       type t = int * int
-      let compare i j = Pervasives.compare i j
+      let compare i j = Stdlib.compare i j
    end
 module IPSet = Set.Make (IntPair)
 

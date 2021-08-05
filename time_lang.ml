@@ -513,7 +513,7 @@ let rec find_date_time_begin date time event_remainder attempts =
       match element with
       | None ->
          if Str.string_match element_start_regex event_s 0 then begin
-            let new_element = String.lowercase (Str.matched_group 1 event_s) in
+            let new_element = String.lowercase_ascii (Str.matched_group 1 event_s) in
             let pos = Str.match_end () in
             let new_event_s = Str.string_after event_s pos in
             ((Some new_element), new_event_s)
@@ -541,7 +541,7 @@ let rec find_date_time_end date time event_remainder attempts =
       | None ->
          begin try
             let pos = Str.search_forward element_end_regex event_s 0 in
-            let new_element = String.lowercase (Str.matched_group 1 event_s) in
+            let new_element = String.lowercase_ascii (Str.matched_group 1 event_s) in
             let new_event_s = Str.string_before event_s pos in
             ((Some new_element), new_event_s)
          with Not_found ->
